@@ -10,10 +10,10 @@ def son_depremleri_getir():
         for deprem in data['features']:
             yer = deprem['properties']['place']
             buyukluk = deprem['properties']['mag']
-            tarih_unix = deprem['properties']['time'] / 1000  # Unix zaman damgası
+            tarih_unix = deprem['properties']['time'] / 1000  
             tarih = datetime.utcfromtimestamp(tarih_unix).strftime('%Y-%m-%d %H:%M:%S UTC')
 
-            print(f"{tarih} - {yer} - Büyüklük: {buyukluk}")
+            print(f"{tarih} - {yer} - Büyüklük (ML): {buyukluk}")
     else:
         print(f"Hata: {response.status_code} - Veri alınamadı.")
 
